@@ -1,0 +1,155 @@
+configuration {
+  /* font: "JetBrains Mono Medium 12"; */
+  /* font: "Fantasque Sans Mono 14"; */
+  /* font: "Noto Sans 14"; */
+  /* font: "Feather 14"; */
+  /* font: "Monserrat SemiBold 11"; */
+  font: "Roboto Bold 14";
+  show-icons: true;
+  display-drun: "";
+  display-window: "";
+  display-calc: "";
+  display-combi: "";
+  drun-display-format: "{name}";
+  threads: 0;
+  scroll-method: 0;
+  disable-history: false;
+  fullscreen: false;
+  hide-scrollbar: true;
+  sidebar-mode: false;
+}
+
+@import "styles/colors.rasi"
+
+window {
+  transparency: "real";
+  background-color: @background;
+  text-color: @foreground;
+  border: 0% 0% 3% 0%;
+  border-color: @border;
+  border-radius: 3% 0% 3% 0%;
+  height: 30%;
+  width: 55%;
+  location: center;
+  anchor: center;
+  x-offset: 0;
+  y-offset: 0;
+}
+
+prompt {
+  enabled: true;
+  padding: 0.3% 0.5% 0% 0%;
+  background-color: @selected;
+  text-color: @foreground;
+  font: "FontAwesome 19";
+}
+
+inputbar {
+  background-color: @selected;
+  text-color: @foreground;
+  expand: false;
+  /* border: 0% 0.2% 0.3% 0%; */
+  border-color: @border-alt;
+  border-radius: 3% 1% 3% 1%;
+  margin: 1% 0% 0% 0%;
+  padding: 0.7% 0.7% 0.7% 0.7%;
+  position: center;
+}
+
+entry {
+  background-color: @selected;
+  text-color: @foreground;
+  placeholder-color: @foreground;
+  expand: true;
+  horizontal-align: 0;
+  placeholder: "";
+  padding: 0.7% 0% 0% 0%;
+  blink: true;
+}
+
+case-indicator {
+  background-color: @selected;
+  text-color: @foreground;
+  spacing: 0;
+}
+
+message {
+  background-color: #FFFFFF00;
+  expand: true;
+  height: 100%;
+}
+
+textbox {
+  text-color: @foreground;
+  background-color: #FFFFFF00;
+}
+
+listview {
+  background-color: #FFFFFF00;
+  columns: 6;
+  spacing: 1%;
+  cycle: false;
+  dynamic: true;
+  layout: vertical;
+}
+
+mainbox {
+  background-color: #FFFFFF00;
+  border: 0% 0% 2.5% 0%;
+  border-radius: 0% 0% 3% 0%;
+  border-color: @border-alt;
+  children: [ inputbar, message, listview];
+  spacing: 2%;
+  padding: 1% 1% 1% 1%;
+}
+
+element {
+  background-color: #FFFFFF00;
+  text-color: @foreground;
+  orientation: vertical;
+  expand: true;
+  border-radius: 0%;
+  padding: 1% 0% 1% 0%;
+  border-radius: 3% 1% 3% 1%;
+}
+
+element-icon {
+  size: 64px;
+  border: 0px;
+}
+
+element-text {
+  expand: true;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  margin: 0.5% 1% 0% 1%;
+}
+
+element normal.urgent,
+element alternate.urgent {
+  background-color: @urgent;
+  text-color: @foreground;
+  border-radius: 1%;
+}
+
+element normal.active,
+element alternate.active {
+  background-color: @background-alt;
+  text-color: @foreground;
+}
+
+element selected {
+  background-color: @selected;
+  text-color: @foreground;
+  border-radius: 3% 1% 3% 1%;
+}
+
+element selected.urgent {
+  background-color: @urgent;
+  text-color: @foreground;
+}
+
+element selected.active {
+  background-color: @background-alt;
+  color: @foreground;
+}
